@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    margin-left: 0;
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+section{
+    height: 2000px;
+    padding-bottom: 150px;
+}
+.top-banner{
+    background-image: url("images/Gagan-Patel.png");
+    background-repeat: no-repeat;
+}
+.half-width{
+    width: 40%;
+    float: left;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    padding-left: 2%;
+}
+h1{
+   font-size: 50px; 
+}
+h1 span{
+    color:rgb(2, 150, 145);
+}
+  }
+.half-width img{
+    width: 100%;
+    size: 200%;
+}
+.half-width:first-child {
+    margin-left: 20%;
+    margin-right: 40%;
+    position: relative;
+    top: px;
+  }
+  
+  .half-width:last-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
