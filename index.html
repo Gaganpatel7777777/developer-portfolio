@@ -40,7 +40,7 @@
     /* Navigation */
     .nav-link {
       transition: color 0.3s ease;
-      margin: 0 1.5rem;
+      margin: 0 1rem;
       position: relative;
       padding: 0.5rem 0;
     }
@@ -83,21 +83,21 @@
       box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
     }
 
-    /* Section Spacing */
-    .section-padding {
-      padding-top: 7rem;
-      padding-bottom: 7rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
+    /* Section Styles */
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       text-align: center;
       color: #22d3ee;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
       position: relative;
+    }
+    
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+      }
     }
     
     .section-title::after {
@@ -113,7 +113,7 @@
 
     /* Project Cards */
     .project-card {
-      padding: 1.8rem;
+      padding: 1.5rem;
       border-radius: 0.75rem;
       background-color: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
@@ -153,85 +153,23 @@
       transform: translateX(50%);
     }
 
-    .project-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.8rem;
-    }
-
-    .project-description {
-      color: #d1d5db;
-      font-size: 0.875rem;
-      line-height: 1.5;
-    }
-
     /* Profile Image Animation */
     .profile-image-container {
       animation: float 6s ease-in-out infinite;
       filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
-      transform-origin: center;
     }
     
     @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
     }
 
-    /* Skills Component */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      text-align: center;
-    }
-
-    @media (min-width: 640px) {
-      .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (min-width: 768px) {
-      .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .skill-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      background-color: rgba(255, 255, 255, 0.03);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-    
-    .skill-item:hover {
-      transform: translateY(-5px);
-      background-color: rgba(255, 255, 255, 0.06);
-    }
-
-    .skill-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      color: #22d3ee;
-    }
-
-    /* Experience Section */
+    /* Experience Timeline */
     .experience-list {
       list-style: none;
       border-left: 2px solid rgba(34, 211, 238, 0.5);
-      padding-left: 2rem;
+      padding-left: 1.5rem;
       margin-left: 1rem;
     }
 
@@ -243,108 +181,50 @@
     .experience-item::before {
       content: '';
       position: absolute;
-      left: -2.5rem;
+      left: -2rem;
       top: 0.3rem;
-      width: 1rem;
-      height: 1rem;
+      width: 0.875rem;
+      height: 0.875rem;
       border-radius: 50%;
       background-color: #22d3ee;
       box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
     }
-
-    .experience-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.3rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .experience-title i {
-      margin-left: 0.5rem;
-      color: #22d3ee;
-    }
-
-    /* Achievements & Certifications */
-    .achievements-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-     @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .hero h3 {
-        font-size: 1rem;
-      }
-    }
-
-    .achievements-card {
-      padding: 1.8rem;
-      border-radius: 0.75rem;
-      background-color: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(103, 232, 249, 0.1);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      height: 100%;
-    }
-
-    .achievements-title {
-      font-size: 1.5rem;
-      color: #22d3ee;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    .achievements-list {
-      list-style-type: none;
-    }
-
-    .achievements-list li {
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-
-    .achievements-list li::before {
-      content: '•';
-      position: absolute;
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
       left: 0;
-      color: #22d3ee;
-      font-size: 1.2rem;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      transition: transform 0.3s ease;
+      transform: translateX(-100%);
     }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .hero-content {
-        padding-top: 6rem;
-      }
-      
-      .hero-content h2 {
-        font-size: 2.5rem;
-      }
-      
-      .hero-content h3 {
-        font-size: 1.2rem;
-      }
-
-      .hero-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-      }
-      
-      .profile-image-container {
-        margin-top: 2rem;
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+    
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 24px;
+      cursor: pointer;
+    }
+    
+    .hamburger-menu span {
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
     }
   </style>
 </head>
@@ -352,43 +232,68 @@
   <div class="container-wrapper">
     <!-- Header -->
     <header class="backdrop-blur-xl bg-white/5 border-b border-white/10 shadow-md fixed top-0 w-full z-50">
-      <div class="max-w-7xl mx-auto flex justify-between items-center p-6">
-        <h1 class="text-2xl font-bold text-white">Gagan Patel</h1>
+      <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
+        <h1 class="text-xl md:text-2xl font-bold text-white">Gagan Patel</h1>
+        
+        <!-- Mobile Menu Button -->
+        <div class="hamburger-menu block md:hidden" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <!-- Desktop Navigation -->
         <nav class="ml-auto hidden md:flex items-center">
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#experience" class="nav-link">Experience</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#resume" class="nav-link">My Resume</a>
           <a href="https://github.com/Gaganpatel7777777" target="_blank" class="nav-link">
-            <i data-feather="github" class="w-6 h-6"></i>
+            <i data-feather="github" class="w-5 h-5 md:w-6 md:h-6"></i>
           </a>
         </nav>
       </div>
     </header>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="absolute top-8 right-8 cursor-pointer" id="close-menu">
+        <i data-feather="x" class="w-6 h-6"></i>
+      </div>
+      <nav class="flex flex-col items-center space-y-6">
+        <a href="#projects" class="text-xl hover:text-cyan-400 transition">Projects</a>
+        <a href="#experience" class="text-xl hover:text-cyan-400 transition">Experience</a>
+        <a href="#skills" class="text-xl hover:text-cyan-400 transition">Skills</a>
+        <a href="#resume" class="text-xl hover:text-cyan-400 transition">My Resume</a>
+        <a href="https://github.com/Gaganpatel7777777" target="_blank" class="flex items-center text-xl hover:text-cyan-400 transition">
+          <i data-feather="github" class="w-5 h-5 mr-2"></i> GitHub
+        </a>
+      </nav>
+    </div>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 lg:px-16 hero">
-      <div class="max-w-7xl mx-auto">
+    <section class="flex flex-col items-center px-4 pt-24 pb-16 md:pt-32 md:pb-20 md:px-6 lg:px-16">
+      <div class="max-w-7xl w-full">
         <div class="flex flex-col md:flex-row items-center justify-between">
-          <div class="hero-content text-center md:text-left md:w-1/2">
-            <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">Hi, I'm <span class="text-cyan-400">Gagan Patel</span></h2>
-            <h3 class="text-xl text-gray-300 h-10 mb-6">
+          <div class="text-center md:text-left md:w-1/2">
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-4">Hi, I'm <span class="text-cyan-400">Gagan Patel</span></h2>
+            <h3 class="text-lg md:text-xl text-gray-300 h-8 md:h-10 mb-4 md:mb-6">
               <span class="typed-text"></span>
             </h3>
-            <p class="mt-4 text-gray-400 max-w-xl mx-auto md:mx-0 text-lg">
+            <p class="mt-2 md:mt-4 text-gray-400 max-w-xl mx-auto md:mx-0 text-base md:text-lg">
               I'm an Electronics and Communication engineer and software developer, I'm a Tech enthusiast passionate about building cloud-integrated applications and seamless user experiences.
             </p>
-           <div class="mt-6 flex flex-col items-start gap-2">
-  <a href="#resume" class="btn-primary">Hire Me</a>
-  <a href="https://in.linkedin.com/in/gaganpatel7777777" target="_blank"
-     class="inline-flex items-center gap-2 rounded-lg bg-[#20b7dc] px-5 py-2 text-white shadow hover:bg-[#005582] transition">
-    <i data-feather="linkedin"></i> LinkedIn
-  </a>
-</div>
+           <div class="mt-4 md:mt-6 flex flex-col items-start gap-2">
+              <a href="#resume" class="btn-primary">Hire Me</a>
+              <a href="https://in.linkedin.com/in/gaganpatel7777777" target="_blank"
+                 class="inline-flex items-center gap-2 rounded-lg bg-[#20b7dc] px-5 py-2 text-white shadow hover:bg-[#005582] transition">
+                <i data-feather="linkedin"></i> LinkedIn
+              </a>
+            </div>
           </div>
           
-          <div class="profile-image-container md:w-2/5 mt-16 md:mt-0">
-            <div class="transform scale-[2]">
+          <div class="profile-image-container w-2/3 sm:w-3/5 md:w-2/5 mt-10 md:mt-0">
+            <div class="transform scale-150 md:scale-[2]">
               <img src="https://github.com/Gaganpatel7777777/developer-portfolio/blob/main/me.png?raw=true" 
                   alt="Gagan Patel" 
                   class="mx-auto" />
@@ -399,54 +304,56 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section-padding">
+    <section id="projects" class="py-16 md:py-20 px-4 md:px-6">
       <div class="max-w-7xl mx-auto">
         <h2 class="section-title">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           <!-- Project cards will be dynamically inserted here -->
         </div>
       </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section-padding">
+    <section id="experience" class="py-16 md:py-20 px-4 md:px-6">
       <div class="max-w-7xl mx-auto">
         <h2 class="section-title">Experience</h2>
-        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-10">
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-5 md:p-10">
           <ul class="experience-list">
             <li class="experience-item">
-              <div class="experience-title">
-                ML Intern @ IIT Jodhpur <i data-feather="external-link" class="w-4 h-4"></i>
+              <div class="flex items-center text-white font-semibold text-sm md:text-base mb-1">
+                ML Intern @ IIT Jodhpur <i data-feather="external-link" class="w-4 h-4 ml-2 text-cyan-400"></i>
               </div>
-              <p class="text-gray-300">Participated in cutting-edge machine learning research focusing on computer vision applications. Worked with faculty on developing and optimizing neural network models.</p>
+              <p class="text-sm md:text-base text-gray-300">Participated in cutting-edge machine learning research focusing on computer vision applications. Worked with faculty on developing and optimizing neural network models.</p>
             </li>
             
             <li class="experience-item">
-              <div class="experience-title">
-                One Week Workshop on Signal Processing and ML @ IIT INDORE <i data-feather="external-link" class="w-4 h-4"></i>
+              <div class="flex items-center text-white font-semibold text-sm md:text-base mb-1">
+                One Week Workshop on Signal Processing and ML @ IIT INDORE <i data-feather="external-link" class="w-4 h-4 ml-2 text-cyan-400"></i>
               </div>
-              <p class="text-gray-300">Attended an intensive workshop covering advanced signal processing techniques and their applications in machine learning.</p>
+              <p class="text-sm md:text-base text-gray-300">Attended an intensive workshop covering advanced signal processing techniques and their applications in machine learning.</p>
             </li>
             
             <li class="experience-item">
-              <div class="experience-title">
-                Vocational Training at BSNL Training Centre (Jabalpur) <i data-feather="external-link" class="w-4 h-4"></i>
+              <div class="flex items-center text-white font-semibold text-sm md:text-base mb-1">
+                Vocational Training at BSNL Training Centre (Jabalpur) <i data-feather="external-link" class="w-4 h-4 ml-2 text-cyan-400"></i>
               </div>
-              <p class="text-gray-300">Completed hands-on training in telecommunications technology and network infrastructure management at India's leading telecom service provider.</p>
+              <p class="text-sm md:text-base text-gray-300">Completed hands-on training in telecommunications technology and network infrastructure management at India's leading telecom service provider.</p>
             </li>
             
             <li class="experience-item">
-              <div class="experience-title">
-                Communication and Social Media Team Lead - The Golden Book Of JEC <i data-feather="external-link" class="w-4 h-4"></i>
+              <div class="flex items-center text-white font-semibold text-sm md:text-base mb-1">
+                Communication and Social Media Team Lead - The Golden Book Of JEC <i data-feather="external-link" class="w-4 h-4 ml-2 text-cyan-400"></i>
               </div>
-              <p class="text-gray-300">Led a team responsible for communication strategies and social media presence, enhancing visibility and engagement for the institution's official publication.</p>
+              <p class="text-sm md:text-base text-gray-300">Led a team responsible for communication strategies and social media presence, enhancing visibility and engagement for the institution's official publication.</p>
             </li>
             
             <li class="experience-item">
-              <div class="experience-title">
-                Freelanced at Fiverr and LinkedIn as a UI/UX Designer and Frontend Developer <i data-feather="linkedin" class="w-4 h-4"></i> <i data-feather="external-link" class="w-4 h-4"></i>
+              <div class="flex items-center flex-wrap text-white font-semibold text-sm md:text-base mb-1">
+                Freelanced at Fiverr and LinkedIn as a UI/UX Designer and Frontend Developer 
+                <i data-feather="linkedin" class="w-4 h-4 ml-2 text-cyan-400"></i> 
+                <i data-feather="external-link" class="w-4 h-4 ml-1 text-cyan-400"></i>
               </div>
-              <p class="text-gray-300">Created responsive, user-friendly interfaces and implemented frontend solutions for various clients. Delivered high-quality design work and maintained excellent client relationships.</p>
+              <p class="text-sm md:text-base text-gray-300">Created responsive, user-friendly interfaces and implemented frontend solutions for various clients. Delivered high-quality design work and maintained excellent client relationships.</p>
             </li>
           </ul>
         </div>
@@ -454,49 +361,50 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding">
+    <section id="skills" class="py-16 md:py-20 px-4 md:px-6">
       <div class="max-w-7xl mx-auto">
         <h2 class="section-title">My Skills</h2>
-        <div class="skills-grid">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-6">
           <!-- Skills will be dynamically inserted here -->
         </div>
       </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="section-padding">
-      <div class="max-w-2xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-10 text-center">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-6">My Resume</h2>
-        <p class="text-gray-300 mb-8 text-lg">Download my latest resume in PDF format below.</p>
+    <section id="resume" class="py-16 md:py-20 px-4 md:px-6 flex justify-center">
+      <div class="max-w-2xl w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-6 md:p-10 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-cyan-400 mb-4 md:mb-6">My Resume</h2>
+        <p class="text-gray-300 mb-6 md:mb-8 text-base md:text-lg">Download my latest resume in PDF format below.</p>
         <a href="https://drive.google.com/file/d/1db5GnLNcwz9Wo5URD4ehTxFyrzxedAUj/view?usp=drive_link" target="_blank" class="btn-primary">Download Resume</a>
       </div>
     </section>
 
     <!-- Achievements and Certifications Section -->
-    <section id="achievements" class="section-padding">
+    <section id="achievements" class="py-16 md:py-20 px-4 md:px-6">
       <div class="max-w-7xl mx-auto">
         <h2 class="section-title">Achievements and Certifications</h2>
-        <div class="achievements-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Achievements Card -->
-          <div class="achievements-card">
-            <h3 class="achievements-title">Achievements</h3>
-            <ul class="achievements-list">
-              <li>GATE'25 QUALIFIED</li>
-              <li>M.TECH INTERVIEW CALL FROM IITs (incl. iit kgp)</li>
-              <li>Smart India Hackathon 2nd runner up</li>
-              <li>STATE LEVEL JUDO PLAYER</li>
+          <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-6 md:p-8">
+            <h3 class="text-xl md:text-2xl text-cyan-400 mb-4 md:mb-6 text-center font-semibold">Achievements</h3>
+            <ul class="space-y-3">
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">GATE'25 QUALIFIED</li>
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">M.TECH INTERVIEW CALL FROM IITs (incl. iit kgp)</li>
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">Smart India Hackathon 2nd runner up</li>
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">STATE LEVEL JUDO PLAYER</li>
             </ul>
           </div>
           
           <!-- Certifications Card -->
-          <div class="achievements-card">
-            <h3 class="achievements-title">Certifications <i data-feather="external-link" class="w-5 h-5"></i></h3>
-            <ul class="achievements-list">
-              <li>DATA SCIENCE WITH PYTHON (SIMPLILEARN)</li>
-              <li>PYTHON DEVELOPMENT COURSE (GUVI)</li>
-              <li>UI/UX Designer certification (great learnings)</li>
-              <li>Java Programming (programming hub)</li>
-              <!-- Links to certificates will be added here -->
+          <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-6 md:p-8"> 
+            <h3 class="flex justify-center items-center text-xl md:text-2xl text-cyan-400 mb-4 md:mb-6 font-semibold">
+              Certifications <i data-feather="external-link" class="w-4 h-4 md:w-5 md:h-5 ml-2"></i>
+            </h3>
+            <ul class="space-y-3">
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">DATA SCIENCE WITH PYTHON (SIMPLILEARN)</li>
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">PYTHON DEVELOPMENT COURSE (GUVI)</li>
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">UI/UX Designer certification (great learnings)</li>
+              <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">Java Programming (programming hub)</li>
             </ul>
           </div>
         </div>
@@ -504,8 +412,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-10 bg-black/30 border-t border-white/5 mt-20">
-      <div class="max-w-7xl mx-auto px-6">
+    <footer class="text-center py-8 bg-black/30 border-t border-white/5 mt-10">
+      <div class="max-w-7xl mx-auto px-4">
         <p class="text-gray-400">&copy; 2025 Gagan Patel. All rights reserved.</p>
       </div>
     </footer>
@@ -567,6 +475,9 @@
       // Render dynamic content
       renderProjects();
       renderSkills();
+      
+      // Mobile menu functionality
+      initMobileMenu();
     });
 
     /**
@@ -611,14 +522,14 @@
      * Dynamically render skills to avoid repetitive HTML
      */
     function renderSkills() {
-      const skillsContainer = document.querySelector('.skills-grid');
+      const skillsContainer = document.querySelector('#skills .grid');
       
       skills.forEach(skill => {
         const skillElement = document.createElement('div');
-        skillElement.className = 'skill-item';
+        skillElement.className = 'flex flex-col items-center gap-2 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition transform hover:-translate-y-1';
         
         skillElement.innerHTML = `
-          <i data-feather="${skill.icon}" class="skill-icon"></i>
+          <i data-feather="${skill.icon}" class="w-8 h-8 text-cyan-400"></i>
           <span>${skill.name}</span>
         `;
         
@@ -628,6 +539,36 @@
       // Re-initialize feather icons after adding new elements
       feather.replace();
     }
+    
+    /**
+     * Initialize mobile menu functionality
+     */
+    function initMobileMenu() {
+      const hamburgerMenu = document.getElementById('hamburger-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+      const mobileLinks = document.querySelectorAll('#mobile-menu a');
+      
+      // Open menu when hamburger is clicked
+      hamburgerMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+      });
+      
+      // Close menu when X is clicked
+      closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+      });
+      
+      // Close menu when a link is clicked
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = ''; // Re-enable scrolling
+        });
+      });
+    }
   </script>
 </body>
-</html>
+</html>;
