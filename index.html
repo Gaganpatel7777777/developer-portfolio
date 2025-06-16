@@ -126,6 +126,21 @@
       height: 100%;
     }
     
+    /* Project Title Styling - Made Bold */
+    .projects-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #22d3ee;
+      margin-bottom: 0.75rem;
+    }
+    
+    @media (min-width: 768px) {
+      .projects-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
     /* Gradient hover effect */
     .project-card::before {
       content: '';
@@ -375,7 +390,7 @@
       <div class="max-w-2xl w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-6 md:p-10 text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-cyan-400 mb-4 md:mb-6">My Resume</h2>
         <p class="text-gray-300 mb-6 md:mb-8 text-base md:text-lg">Download my latest resume in PDF format below.</p>
-        <a href="https://drive.google.com/file/d/1db5GnLNcwz9Wo5URD4ehTxFyrzxedAUj/view?usp=drive_link" target="_blank" class="btn-primary">Download Resume</a>
+        <a href="https://drive.google.com/file/d/12rmcGmxUeyQYr4sYpRLHJ_5CVH8FXyvx/view?usp=drivesdk" target="_blank" class="btn-primary">Download Resume</a>
       </div>
     </section>
 
@@ -399,6 +414,7 @@
           <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-6 md:p-8"> 
             <h3 class="flex justify-center items-center text-xl md:text-2xl text-cyan-400 mb-4 md:mb-6 font-semibold">
               Certifications <i data-feather="external-link" class="w-4 h-4 md:w-5 md:h-5 ml-2"></i>
+              <a href="https://cdn3.me-qr.com/pdf/02e799ac-eb38-4ab9-96c1-862adfb37c54.pdf" target="_blank" class="ml-1 hover:text-white transition">View</a>
             </h3>
             <ul class="space-y-3">
               <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-cyan-400 before:text-lg">DATA SCIENCE WITH PYTHON (SIMPLILEARN)</li>
@@ -512,7 +528,7 @@
         projectElement.innerHTML = `
           <h3 class="projects-title">${project.title}</h3>
           <p class="project-description">${project.description}</p>
-       ` ;
+        `;
         
         projectsContainer.appendChild(projectElement);
       });
@@ -571,4 +587,4 @@
     }
   </script>
 </body>
-</html>;
+</html>
